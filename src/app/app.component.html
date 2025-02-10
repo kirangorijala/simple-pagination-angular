@@ -8,37 +8,42 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of results; trackBy: trackById">
-        <td>{{item.id}}</td>
-        <td>{{item.name}}</td>
-        <td>{{item.age}}</td>
-      </tr>
+      @for(item of results; track item.id) {
+        <tr>
+          <td>{{item.id}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.age}}</td>
+        </tr>
+      }
     </tbody>
   </table>
-  <nav class="pagination" *ngIf="data.count > 10" aria-label="Table navigation">
-    <button 
-      class="btn btn-secondary" 
-      (click)="onFirstBtnClick()" 
-      [disabled]="currentIndex === 0">
-      First
-    </button>
-    <button 
-      class="btn btn-secondary" 
-      (click)="onPreviousBtnClick()" 
-      [disabled]="currentIndex === 0">
-      Prev
-    </button>
-    <button 
-      class="btn btn-secondary" 
-      (click)="onNextBtnClick()" 
-      [disabled]="isLastPage">
-      Next
-    </button>
-    <button 
-      class="btn btn-secondary" 
-      (click)="onLastBtnClick()" 
-      [disabled]="isLastPage">
-      Last
-    </button>
-  </nav>
+  @if(data.count > 10) {
+    <p>Showing {{currentIndex + 1}} to {{currentIndex + results.length}} of {{data.count}} entries</p>
+    <nav class="pagination" aria-label="Table navigation">
+      <button 
+        class="btn btn-secondary" 
+        (click)="onFirstBtnClick()" 
+        [disabled]="currentIndex === 0">
+        First
+      </button>
+      <button 
+        class="btn btn-secondary" 
+        (click)="onPreviousBtnClick()" 
+        [disabled]="currentIndex === 0">
+        Prev
+      </button>
+      <button 
+        class="btn btn-secondary" 
+        (click)="onNextBtnClick()" 
+        [disabled]="isLastPage">
+        Next
+      </button>
+      <button 
+        class="btn btn-secondary" 
+        (click)="onLastBtnClick()" 
+        [disabled]="isLastPage">
+        Last
+      </button>
+    </nav>
+  }
 </div>
