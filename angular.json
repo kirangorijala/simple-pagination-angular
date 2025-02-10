@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-app": {
+    "simple-pagination-angular": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-app",
+            "outputPath": "dist/simple-pagination-angular",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -30,9 +30,12 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/scss/bootstrap.scss",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -65,10 +68,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angular-app:build:production"
+              "browserTarget": "simple-pagination-angular:build:production"
             },
             "development": {
-              "browserTarget": "angular-app:build:development"
+              "browserTarget": "simple-pagination-angular:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +79,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-app:build"
+            "browserTarget": "simple-pagination-angular:build"
           }
         },
         "test": {
@@ -100,5 +103,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "9fd085b2-6a96-4276-a3ae-9eeb48b3c9a4"
   }
 }

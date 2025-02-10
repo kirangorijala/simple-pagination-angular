@@ -25,3 +25,10 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+### Exercise Description**Objective:** Create a paginated table using Angular.**Task:** Given the provided data, create a table that displays 10 results per page. If the data exceeds 10 results, pagination controls should appear, allowing the user to navigate through the pages. The pagination controls should include four buttons: `First`, `Prev`, `Next`, and `Last`.**Requirements:**
+
+1. Display the data in a table format.
+2. Implement pagination to show 10 results per page.
+3. Include pagination controls (`First`, `Prev`, `Next`, `Last`) to navigate through the pages.
+4. Ensure the table updates correctly when navigating through pages.
