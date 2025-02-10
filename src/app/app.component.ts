@@ -45,6 +45,10 @@ export class AppComponent implements OnInit {
     this.updateResults();
   }
 
+  trackById(index: number, item: any): number {
+    return item.id;
+  }
+
   onFirstBtnClick(): void {
     this.currentIndex = 0;
     this.updateResults();
@@ -65,12 +69,14 @@ export class AppComponent implements OnInit {
   }
 
   onLastBtnClick(): void {
-    this.currentIndex = Math.floor(this.data.results.length / this.pageSize) * this.pageSize;
+    this.currentIndex = Math.floor(this.data.count / this.pageSize) * this.pageSize;
     this.updateResults();
   }
 
   private updateResults(): void {
-    this.results = this.data.results.slice(this.currentIndex, this.currentIndex + this.pageSize);
-    this.isLastPage = this.currentIndex + this.pageSize >= this.data.results.length;
+    const start = this.currentIndex;
+    const end = Math.min(start + this.pageSize, this.data.count);
+    this.results = this.data.results.slice(start, end);
+    this.isLastPage = end >= this.data.count;
   }
 }
