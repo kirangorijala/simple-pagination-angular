@@ -1,34 +1,79 @@
-# AngularApp
+# Simple Pagination Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.11.
+A modern Angular application demonstrating table pagination with Tailwind CSS styling. This project showcases how to implement client-side pagination with a clean, responsive UI.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Responsive data table with pagination
+- 10 items per page display
+- Navigation controls (First, Previous, Next, Last)
+- Modern UI with Tailwind CSS
+- TypeScript strict mode enabled
+- Standalone Angular components
 
-## Code scaffolding
+## Prerequisites
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Node.js (v18 or higher)
+- npm (v9 or higher)
+- Angular CLI (v19.1.x)
 
-## Build
+## Installation
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Clone the repository:
+```bash
+git clone [repository-url]
+```
 
-## Running unit tests
+2. Install dependencies:
+```bash
+npm install
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+3. Start the development server:
+```bash
+ng serve
+```
 
-## Running end-to-end tests
+4. Navigate to `http://localhost:4200/`
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Project Structure
 
-## Further help
+```
+src/
+├── app/
+│   ├── app.component.ts        # Main component with pagination logic
+│   ├── app.component.html      # Table and pagination UI
+│   └── app.config.ts           # Angular configuration
+├── assets/                     # Static assets
+└── styles.scss                 # Global styles with Tailwind CSS
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Development
 
-### Exercise Description**Objective:** Create a paginated table using Angular.**Task:** Given the provided data, create a table that displays 10 results per page. If the data exceeds 10 results, pagination controls should appear, allowing the user to navigate through the pages. The pagination controls should include four buttons: `First`, `Prev`, `Next`, and `Last`.**Requirements:**
+- Run `ng serve` for a dev server
+- Run `ng build` to build the project
+- Run `ng test` to execute unit tests
+- Run `ng e2e` to execute end-to-end tests
 
-1. Display the data in a table format.
-2. Implement pagination to show 10 results per page.
-3. Include pagination controls (`First`, `Prev`, `Next`, `Last`) to navigate through the pages.
-4. Ensure the table updates correctly when navigating through pages.
+## Technical Details
+
+- **Framework**: Angular 19.1.5
+- **Styling**: Tailwind CSS 4.0.6
+- **Language**: TypeScript 5.7.3
+- **Package Manager**: npm
+- **Build Tool**: Angular CLI
+
+## Features Implemented
+
+1. Data table with dynamic content
+2. Pagination controls:
+   - First page navigation
+   - Previous page navigation
+   - Next page navigation
+   - Last page navigation
+3. Page size limit of 10 items
+4. Current page indicator
+5. Responsive design
+6. Hover effects on table rows
+7. Disabled state for navigation buttons
+
